@@ -1,5 +1,6 @@
 from tkinter import *
 import posix
+import sys
 
 def execute_command():
     pipe_fd = posix.pipe()
@@ -30,7 +31,7 @@ def execute_command():
             readbytes = posix.read(pipe_fd[0], 1000)
         posix.close(pipe_fd[0])
         posix.wait()
-        return str(ret, "utf-8")
+        return str(ret, sys.stdout.encoding)
 
 def button_press():
     out_label["text"] = execute_command()
