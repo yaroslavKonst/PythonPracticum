@@ -25,4 +25,7 @@ check_UUID.grid(sticky = "EWN", column = 0, row = 2)
 out_label = Label(master = main_frame, width = 80)
 out_label.grid(sticky = "NEWS", column = 1, row = 0);
 
+check_fs["cursor"] = "hand1"
+check_UUID["cursor"] = "hand1"
+
 mainloop()
