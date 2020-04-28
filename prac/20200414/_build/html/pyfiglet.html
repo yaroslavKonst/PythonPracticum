@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>PyFiglet &#8212; test  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Табличка и картинка" href="page2.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-pyfiglet">
+<span id="pyfiglet"></span><h1>PyFiglet<a class="headerlink" href="#module-pyfiglet" title="Permalink to this headline">¶</a></h1>
+<p>Python FIGlet adaption</p>
+<dl class="py exception">
+<dt id="pyfiglet.CharNotPrinted">
+<em class="property">exception </em><code class="sig-prename descclassname">pyfiglet.</code><code class="sig-name descname">CharNotPrinted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.CharNotPrinted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when the width is not sufficient to print a character</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyfiglet.Figlet">
+<em class="property">class </em><code class="sig-prename descclassname">pyfiglet.</code><code class="sig-name descname">Figlet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span><span class="o">=</span><span class="default_value">'standard'</span></em>, <em class="sig-param"><span class="n">direction</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">justify</span><span class="o">=</span><span class="default_value">'auto'</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">80</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.Figlet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main figlet class.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyfiglet.FigletBuilder">
+<em class="property">class </em><code class="sig-prename descclassname">pyfiglet.</code><code class="sig-name descname">FigletBuilder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">direction</span></em>, <em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">justify</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represent the internals of the build process</p>
+<dl class="py method">
+<dt id="pyfiglet.FigletBuilder.formatProduct">
+<code class="sig-name descname">formatProduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletBuilder.formatProduct" title="Permalink to this definition">¶</a></dt>
+<dd><p>This create the output string representation from
+the internal representation of the product</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyfiglet.FigletBuilder.returnProduct">
+<code class="sig-name descname">returnProduct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletBuilder.returnProduct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the output string created by formatProduct</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyfiglet.FigletBuilder.smushAmount">
+<code class="sig-name descname">smushAmount</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">buffer</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">curChar</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletBuilder.smushAmount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the amount of smushing we can do between this char and the
+last If this is the first char it will throw a series of exceptions
+which are caught and cause appropriate values to be set for later.</p>
+<p>This differs from C figlet which will just get bogus values from
+memory and then discard them after.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyfiglet.FigletBuilder.smushChars">
+<code class="sig-name descname">smushChars</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">right</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletBuilder.smushChars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given 2 characters which represent the edges rendered figlet
+fonts where they would touch, see if they can be smushed together.
+Returns None if this cannot or should not be done.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyfiglet.FigletError">
+<em class="property">exception </em><code class="sig-prename descclassname">pyfiglet.</code><code class="sig-name descname">FigletError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt id="pyfiglet.FigletFont">
+<em class="property">class </em><code class="sig-prename descclassname">pyfiglet.</code><code class="sig-name descname">FigletFont</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span><span class="o">=</span><span class="default_value">'standard'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletFont" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents the currently loaded font, including
+meta-data about how it should be displayed by default</p>
+<dl class="py method">
+<dt id="pyfiglet.FigletFont.infoFont">
+<em class="property">classmethod </em><code class="sig-name descname">infoFont</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em>, <em class="sig-param"><span class="n">short</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletFont.infoFont" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get informations of font</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyfiglet.FigletFont.installFonts">
+<em class="property">static </em><code class="sig-name descname">installFonts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletFont.installFonts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install the specified font file to this system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyfiglet.FigletFont.loadFont">
+<code class="sig-name descname">loadFont</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletFont.loadFont" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse loaded font data for the rendering engine to consume</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyfiglet.FigletFont.preloadFont">
+<em class="property">classmethod </em><code class="sig-name descname">preloadFont</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">font</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletFont.preloadFont" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load font data if exist</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyfiglet.FigletProduct">
+<em class="property">class </em><code class="sig-prename descclassname">pyfiglet.</code><code class="sig-name descname">FigletProduct</code><a class="headerlink" href="#pyfiglet.FigletProduct" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class stores the internal build part of
+the ascii output string</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyfiglet.FigletRenderingEngine">
+<em class="property">class </em><code class="sig-prename descclassname">pyfiglet.</code><code class="sig-name descname">FigletRenderingEngine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">base</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletRenderingEngine" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class handles the rendering of a FigletFont,
+including smushing/kerning/justification/direction</p>
+<dl class="py method">
+<dt id="pyfiglet.FigletRenderingEngine.render">
+<code class="sig-name descname">render</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FigletRenderingEngine.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render an ASCII text string in figlet</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pyfiglet.FigletString">
+<em class="property">class </em><code class="sig-prename descclassname">pyfiglet.</code><code class="sig-name descname">FigletString</code><a class="headerlink" href="#pyfiglet.FigletString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rendered figlet font</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyfiglet.FontError">
+<em class="property">exception </em><code class="sig-prename descclassname">pyfiglet.</code><code class="sig-name descname">FontError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FontError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when there is a problem parsing a font file</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyfiglet.FontNotFound">
+<em class="property">exception </em><code class="sig-prename descclassname">pyfiglet.</code><code class="sig-name descname">FontNotFound</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.FontNotFound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when a font can’t be located</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pyfiglet.InvalidColor">
+<em class="property">exception </em><code class="sig-prename descclassname">pyfiglet.</code><code class="sig-name descname">InvalidColor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyfiglet.InvalidColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raised when the color passed is invalid</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">test</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="maindoc.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page2.html">Табличка и картинка</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PyFiglet</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="page2.html" title="previous chapter">Табличка и картинка</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Yaroslav.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/pyfiglet.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

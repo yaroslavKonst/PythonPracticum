@@ -1,0 +1,5 @@
+PyFiglet
+========
+
+.. automodule:: pyfiglet
+ :members:
