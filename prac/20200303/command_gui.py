@@ -60,7 +60,7 @@ check_UUID_val = IntVar()
 check_UUID = Checkbutton(master = options_frame, text = "Show file system UUID", variable = check_UUID_val, onvalue = 1, offvalue = 0)
 check_UUID.grid(sticky = "EWN", column = 0, row = 2)
 
-out_label = Label(master = main_frame, width = 80, height = 40, justify = LEFT)
+out_label = Label(master = main_frame, width = 80, height = 40, justify = LEFT, font=("Source Code Pro", 12))
 out_label.grid(sticky = "NEWS", column = 1, row = 0);
 
 check_fs["cursor"] = "hand1"
